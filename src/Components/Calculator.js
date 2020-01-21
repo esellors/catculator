@@ -25,6 +25,10 @@ export default class Calculator extends Component {
 
     doTheMath() {
         const { num1, num2, operation } = this.state;
+
+        // NOTE: You should mostly never use 'eval' but should know that it exists and how it works. // ;
+        //       There are better solutions to this and I challenge you to find one.
+        // See the following for more info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#Never_use_eval!
         const howManyCats = eval(num1 + operation + num2);
         
         this.setState({ solution: howManyCats });
